@@ -17,9 +17,9 @@ def shell_sort(vector):
     for i in range(1, len(vector)):
         temp=i
         for j in range(1, i+1):
-            if vector[i-j]>vector[n]:
-                vector[i-j], vector[n] = vector[n], vector[i-j]
-                n=i-j
+            if vector[i-j]>vector[temp]:
+                vector[i-j], vector[temp] = vector[temp], vector[i-j]
+                temp=i-j
     
     return vector
 
