@@ -3,8 +3,7 @@ def shell_sort(vector):
     size=len(vector)
     distancia=size//2
     temp=0
-
-    while True:
+    while distancia>1:
         for i in range(distancia):
             temp=i
             while distancia+i<size:
@@ -13,10 +12,15 @@ def shell_sort(vector):
                     temp=distancia+i
                 i+=distancia
                 
-        if distancia==1:
-            break
         distancia//=2
         
+    for i in range(1, len(vector)):
+        temp=i
+        for j in range(1, i+1):
+            if vector[i-j]>vector[n]:
+                vector[i-j], vector[n] = vector[n], vector[i-j]
+                n=i-j
+    
     return vector
 
 
