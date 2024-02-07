@@ -24,9 +24,61 @@ def shell_sort(vector):
     return vector
 
 
-
+'''
 def quick_sort(vector):
-    return vector
+    size=len(vector)
+    pivot=size-1
+    point=-1
 
-def merge_sort(vector):
-    return vector
+    if size==1:
+        return vector
+    else:
+        for i in range(size):
+            if vector[i]>=vector[pivot]:
+                point+=1
+                vector[i], vector[point] = vector[point], vector[i]
+        return vector
+
+'''
+
+
+
+
+
+
+def merge_sort(vector, inicio=0, fin=0):
+    if fin==0:
+        fin=len(vector)
+    mid=(inicio+fin)//2
+
+    if fin-inicio==1:
+        return vector
+        
+    else:
+        merge_sort(vector, inicio, mid)
+        merge_sort(vector, mid, fin)
+
+        aux=[]
+        der=mid
+        izq=inicio
+
+        while len(aux)<fin-inicio:
+
+            if izq>=mid:
+                aux.append(vector[der])
+                der+=1
+            elif der>=fin:
+                aux.append(vector[izq])
+                izq+=1
+
+            elif vector[izq]<vector[der]:
+                aux.append(vector[izq])
+                izq+=1
+            else:
+                aux.append(vector[der])
+                der+=1
+            
+        for i in range(inicio, fin):
+            vector[i]=aux[i-inicio]
+
+        return vector
