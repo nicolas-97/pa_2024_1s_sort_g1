@@ -1,9 +1,9 @@
 def shell_sort(vector):
-    n = len(vector)
-    gap = n // 2
+    Longitud = len(vector)
+    gap = Longitud // 2
     while gap > 0:
         j = gap
-        while j < n:
+        while j < Longitud:
             i = j - gap
             while i >= 0:
                 if vector[i + gap] > vector [i]:
@@ -26,26 +26,26 @@ def quick_sort(vector):
 
 def merge_sort(vector):
     if len(vector) > 1:
-        mid = len(vector) // 2
-        L = vector[:mid]
-        R = vector[mid:]
-        merge_sort(L)
-        merge_sort(R)
+        Mid = len(vector) // 2
+        Left = vector[:Mid]
+        Right = vector[Mid:]
+        merge_sort(Left)
+        merge_sort(Right)
         i = j = k = 0
-        while i < len(L) and j < len(R):
-            if L[i] <= R[j]:
-                vector[k] = L[i]
+        while i < len(Left) and j < len(Right):
+            if Left[i] <= Right[j]:
+                vector[k] = Left[i]
                 i += 1
             else:
-                vector[k] = R[j]
+                vector[k] = Right[j]
                 j += 1
             k += 1
-        while i < len(L):
-            vector[k] = L[i]
+        while i < len(Left):
+            vector[k] = Left[i]
             i += 1
             k += 1
-        while j < len(R):
-            vector[k] = R[j]
+        while j < len(Right):
+            vector[k] = Right[j]
             j += 1
             k += 1
     return vector
