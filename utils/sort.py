@@ -41,15 +41,8 @@ def quick_sort(vector, inicio=0, fin=0):
                 point+=1
 
         quick_sort(vector, inicio, point-1)
-        quick_sort(vector, point+1, fin)
+        quick_sort(vector, point, fin)
         return vector
-
-
-
-
-
-
-
 
 
 def merge_sort(vector, inicio=0, fin=0):
