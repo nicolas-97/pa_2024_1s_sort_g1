@@ -9,10 +9,11 @@ def shell_sort(vector):
             vector[insert_index]=vector[insert_index-interval]
             insert_index -= interval
             vector[insert_index]= insert_value
-        interval//2
+        interval//=2
     return vector
 
 def quick_sort(vector):
+
     return vector
 
 def merge_sort(vector):
