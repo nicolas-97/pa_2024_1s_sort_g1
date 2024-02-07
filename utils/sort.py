@@ -49,5 +49,5 @@ def merge_sort(vector):
             nmenor = vector[posicion_menor]
             vector[posicion_menor] = vector[pactual]
             vector[pactual] = nmenor
-
+            
     return vector
