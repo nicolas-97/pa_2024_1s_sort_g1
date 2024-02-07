@@ -51,7 +51,7 @@ def merge_sort(vector, inicio=0, fin=0):
         fin=len(vector)
     mid=(inicio+fin)//2
 
-    if fin-inicio==1:
+    if fin-inicio==1 or len(vector)==0:
         return vector
         
     else:
