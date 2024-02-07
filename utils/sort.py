@@ -24,22 +24,28 @@ def shell_sort(vector):
     return vector
 
 
-'''
-def quick_sort(vector):
-    size=len(vector)
-    pivot=size-1
-    point=-1
 
-    if size==1:
+def quick_sort(vector, inicio=0, fin=0):
+    if fin==0:
+        fin=len(vector)
+
+    pivot=fin-1
+    point=inicio
+
+    if fin-inicio<=1:
         return vector
     else:
-        for i in range(size):
-            if vector[i]>=vector[pivot]:
-                point+=1
+        for i in range(inicio, fin):
+            if vector[i]<=vector[pivot]:
                 vector[i], vector[point] = vector[point], vector[i]
+                point+=1
+
+        quick_sort(vector, inicio, point-1)
+        quick_sort(vector, point+1, fin)
         return vector
 
-'''
+
+
 
 
 
