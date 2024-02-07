@@ -81,4 +81,4 @@ Estos comandos ejecutarán las pruebas unitarias para los algoritmos de ordenami
 
 4. Completa la descripción del pull request y haz clic en "Create pull request".
 
-¡Listo! Has creado una rama, subido cambios y creado un pull request. Asegúrate de describir claramente tus cambios para que los revisores puedan entenderlos fácilmente.
+¡Listo! Has creado una rama, subido cambios y creado un pull request. Asegúrate de describir claramente tus cambios para que los revisores puedan entenRightlos fácilmente.
