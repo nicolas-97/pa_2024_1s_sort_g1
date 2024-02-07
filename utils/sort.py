@@ -41,14 +41,14 @@ def merge_sort(vector):
                 j += 1
             k += 1
 
-            while i < len(Left):
-                vector[k] = Left[i]
-                i += 1
-                k += 1
+        while i < len(Left):
+            vector[k] = Left[i]
+            i += 1
+            k += 1
 
-            while j < len(Right):
-                vector[k] = Right[j]
-                j += 1
-                k += 1
+        while j < len(Right):
+            vector[k] = Right[j]
+            j += 1
+            k += 1
 
     return vector
