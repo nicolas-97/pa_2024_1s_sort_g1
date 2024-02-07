@@ -2,7 +2,7 @@ import unittest
 import utils.sort as sort
 import random
 
-class Testmerge_sort(unittest.TestCase):
+class TestMergeSort(unittest.TestCase):
 
     def test_merge_sort_conjunto_vacio(self):
         input_data = []
