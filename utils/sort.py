@@ -6,3 +6,9 @@ def quick_sort(vector):
 
 def merge_sort(vector):
     return vector
+
+
+
+
+
+
