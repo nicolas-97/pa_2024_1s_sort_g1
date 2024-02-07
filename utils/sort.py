@@ -13,8 +13,25 @@ def shell_sort(vector):
     return vector
 
 def quick_sort(vector):
-
-    return vector
+    vector
+    def quicksort(vector,left,right):
+        partition_pos=partition(vector,left,right)
+        quicksort(vector,left,partition_pos -1)
+        quicksort(vector,partition_pos+1, right)
+    def partition(vector,left,right):
+        i=left
+        j=right+1
+        pivot= vector[right]
+        while i<j:
+            while i < right and vector[i] <pivot:
+                i+=1
+            while j > left and vector[j] >=pivot:
+                j-=1
+            if i<j:
+                vector[i], vector[j] = vector[j], vector[i]    
+        if vector[i] > pivot:
+            vector[i], vector[right] = vector[right], vector[i]
+        return vector
 
 def merge_sort(vector):
     return vector
