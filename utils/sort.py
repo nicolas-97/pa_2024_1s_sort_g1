@@ -1,4 +1,25 @@
 def shell_sort(vector):
+    size = len(vector)
+    # Si el arreglo es impar usando (//) se puede hacer el inervalo entero para que se pueda manejar 
+    intervalo = size // 2  
+
+    while intervalo > 0 :
+        print(f" __________Intervalo: {intervalo}__________")
+        for i in range (intervalo, size):
+            #print (f"Pasadas {i-1}") ## PREGUNTAR PQ
+            # i esta iterando en funcion del intervalo
+            insert_value = vector[i] #Toma el siguiente valor a ser insertado
+            insert_index = i #Indice donde se inserta el valor
+
+            print(f"comparación: {vector[insert_index - intervalo ]} > {insert_value}")
+            while insert_index >= intervalo and [insert_index - intervalo ] > insert_value:
+                #Se mueve al frente hasta encontrar un lugar adecuado o hasta el principio de la lista
+                vector[insert_index] = vector[insert_index - intervalo]
+                insert_index -= intervalo
+            
+            vector[insert_index] = insert_value #Insertamos el valor en su lugar correcto
+        #Actualiza el intervalo
+        intervalo //= 2
     return vector
 
 def quick_sort(vector):
