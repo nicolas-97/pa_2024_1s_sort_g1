@@ -25,6 +25,7 @@ def quick_sort(vector):
 
 
 
+
 def merge_sort(vector,arrder,arrizq,arr_resultado):
     vector =[]
     while len(arrizq)>0 and len(arrder)>0:
