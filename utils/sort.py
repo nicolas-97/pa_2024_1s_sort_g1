@@ -32,22 +32,33 @@ def quick_sort(vector):
         return quick_sort(izq)+[pivote]+quick_sort(der)
 
 def merge_sort(vector):
-    tam = len(vector) - 1
+    if len(vector) > 1:
+        mid = len(vector) // 2
+        izq = vector[:mid]
+        der = vector[mid:]
 
-    for pactual in range(0, tam):
-        posicion_menor = pactual
-        nmenor = vector[posicion_menor]
+        merge_sort(izq)
+        merge_sort(der)
 
-        for busc in range(pactual, tam):
-            e_enc = vector[busc + 1]
+        i, j, k = 0, 0, 0
 
-            if nmenor > e_enc:
-                mnmenor = e_enc
-                posicion_menor = busc + 1
+        while i < len(izq) and j < len(der):
+            if izq[i] < der[j]:
+                vector[k] = izq[i]
+                i += 1
+            else:
+                vector[k] = der[j]
+                j += 1
+            k += 1
 
-        if posicion_menor != pactual:
-            nmenor = vector[posicion_menor]
-            vector[posicion_menor] = vector[pactual]
-            vector[pactual] = nmenor
-            
+        while i < len(izq):
+            vector[k] = izq[i]
+            i += 1
+            k += 1
+
+        while j < len(der):
+            vector[k] = der[j]
+            j += 1
+            k += 1
+
     return vector
