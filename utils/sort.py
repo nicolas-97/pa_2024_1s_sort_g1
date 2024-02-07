@@ -57,8 +57,3 @@ def merge_sort(vector):
         k += 1
 
     return vector
-
-
-arr = [5, 4, 3, 2, 1]
-merge_sort(arr)
-print(arr)
