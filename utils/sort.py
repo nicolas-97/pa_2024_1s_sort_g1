@@ -26,10 +26,10 @@ def quick_sort(vector):
     return vector
 
 def merge_sort(vector):
-    size = len(vector)
-    if size == 1:
+    
+    if len(vector) == 1:
         return [vector[0]]
-    mitad = size //2
+    mitad = len(vector) //2
     izquierda = merge_sort(vector[:mitad])
     derecha = merge_sort(vector[mitad:])
 
