@@ -1,3 +1,5 @@
+vector = [467, 35, 12, 32, 4]
+
 def shell_sort(vector):
     n=len(vector)
     intervalo=n//2
@@ -16,7 +18,7 @@ def shell_sort(vector):
     return vector
 
 def quick_sort(vector):
-    if len(vector)<=1:
+    if len(vector)<1:
         return vector
     intervalo_1=vector[len(vector)//2]
     iz=[x for x in vector if x<intervalo_1]
@@ -29,30 +31,29 @@ def quick_sort(vector):
 def merge_sort(vector):
     if len(vector)>1:
         mid=len(vector)//2
-        s1=vector[:mid]
-        s2=vector[mid:]
-        merge_sort(s1)
-        merge_sort(s2)
+        s1= merge_sort(vector[:mid])
+        s2= merge_sort(vector[mid:])
         a=0
         b=0
         c=0
-    while a<len(s1) and b<len(s2):
-        if s1[a]<s2[b]:
+        while a<len(s1) and b<len(s2):
+            if s1[a]<s2[b]:
+                vector[c]=s1[a]
+                a+=1
+            else:
+                vector[c]=s2[b]
+                b+=1
+            c+=1
+        while a<len(s1):
             vector[c]=s1[a]
             a+=1
-        else:
+            c+=1
+        while b<len(s2):
             vector[c]=s2[b]
             b+=1
-        c+=1
-    while a<len(s1):
-        vector[c]=s1[a]
-        a+=1
-        c+=1
-    while b<len(s2):
-        vector[c]=s2[b]
-        b+=1
-        c+=1
+            c+=1
     return vector
     
+
 
  
