@@ -38,6 +38,7 @@ def merge_sort(vector):
             else:
                 vector[k] = mitad_der[j]
                 j += 1
+                
             k += 1
         while i < len(mitad_izq):
             vector[k] = mitad_izq[i]
