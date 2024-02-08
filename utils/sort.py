@@ -27,28 +27,32 @@ def quick_sort(vector):
     
 
 def merge_sort(vector):
-    if len(vector<=1):
-        return vector
     if len(vector)>1:
         mid=len(vector)//2
         s1=vector[:mid]
         s2=vector[mid:]
-    s1=merge_sort(s1)
-    s2=merge_sort(s2)
-    return merge(s1,s2)
-def merge(left,right):
-    merged=[]
-    left_1=0
-    right_1=0
-    while left_1<len(left) and right_1<len(right):
-        if left[left_1]<right[right_1]:
-            merged.append(left[left_1])
-            left_1+=1
+        merge_sort(s1)
+        merge_sort(s2)
+        a=0
+        b=0
+        c=0
+    while a<len(s1) and b<len(s2):
+        if s1[a]<s2[b]:
+            vector[c]=s1[a]
+            a+=1
         else:
-            merged.append(right[right_1])
-            right_1+=1
-    merged+=left[left_1:]
-    merged+=right[right_1:] 
-    return merged   
+            vector[c]=s2[b]
+            b+=1
+        c+=1
+    while a<len(s1):
+        vector[c]=s1[a]
+        a+=1
+        c+=1
+    while b<len(s2):
+        vector[c]=s2[b]
+        b+=1
+        c+=1
+    return vector
+    
 
-
+ 
