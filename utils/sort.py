@@ -13,7 +13,18 @@ def shell_sort(vector):
     return vector
 
 def quick_sort(vector):
-    return vector
+    if  len(vector) <= 1:
+        return vector
+    else:
+        pivot = vector.pop()
+    mayor = []
+    menor = []
+    for  i in vector:
+        if i > pivot:
+            mayor.append(i)
+        else:
+            menor.append(i)
+        return quick_sort(menor)+ [pivot]+quick_sort(mayor)  
 
 def merge_sort(vector):
     return vector
