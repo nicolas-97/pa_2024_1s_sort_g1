@@ -13,10 +13,9 @@ def shell_sort(vector):
     return vector
 
 def quick_sort(vector):
-    n = len(vector)
-    if n <= 1:
+    if len(vector) <= 1:
         return vector
-    pivot = vector[n//2]
+    pivot = vector[len(vector)//2]
     derecha = [x for x in vector if x < pivot]
     mitad = [x for x in vector if x == pivot]
     izquierda = [x for x in vector if x > pivot]
