@@ -2,7 +2,11 @@ def shell_sort(vector):
     n=len(vector)
     salto = n//2
     while salto > 0:
+<<<<<<< HEAD
         for i in range(salto,n):   
+=======
+        for i in range(salto,n):  
+>>>>>>> ae3aa79022544a2f955382eb3eb00bda117b892b
             temp = vector[i]
             j = i
             while j >= salto and vector[j - salto] > temp:
@@ -10,6 +14,10 @@ def shell_sort(vector):
                 j -= salto
             vector[j] = temp
         salto//=2
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae3aa79022544a2f955382eb3eb00bda117b892b
     return vector
 
 def quick_sort(vector):
@@ -17,8 +25,13 @@ def quick_sort(vector):
         return vector
     else:
         pivote=vector[0]
+<<<<<<< HEAD
     
     izq=[x for x in vector[1:] if x< pivote]
+=======
+
+    izq=[x for x in vector[1:] if x<pivote]
+>>>>>>> ae3aa79022544a2f955382eb3eb00bda117b892b
     der=[x for x in vector[1:] if x>=pivote]
     return quick_sort(izq)+[pivote]+quick_sort(der)
 
