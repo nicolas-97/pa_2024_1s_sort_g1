@@ -54,6 +54,3 @@ def merge_sort(vector):
             m +=1
 
     return vector
-
-vector=[8,6,4,6,2,678,8]
-merge_sort(vector)
