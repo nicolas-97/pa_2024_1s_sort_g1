@@ -47,7 +47,7 @@ def merge_sort(vector):
 
 
         while len(mitad_izq)>i and len(mitad_der)>j:
-            i, j=0
+            i=j=0
             if mitad_izq[i] > mitad_der[j]:
                 vector_final.append(mitad_der[j])
                 j+=1
