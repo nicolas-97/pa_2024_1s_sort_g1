@@ -16,9 +16,9 @@ def quick_sort(vector):
     if  len(vector) <= 1:
         return vector
     else:
-        pivot = vector.pop()
-    mayor = []
-    menor = []
+        pivot = vector.pop(0)
+        mayor = []
+        menor = []
     for  i in vector:
         if i > pivot:
             mayor.append(i)
