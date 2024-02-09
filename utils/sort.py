@@ -26,9 +26,6 @@ def quick_sort(vector):
 
 
 
-
-
-
 def merge_sort(vector):
     if len(vector) <= 1:
         return vector
