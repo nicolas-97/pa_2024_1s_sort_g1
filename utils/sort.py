@@ -15,16 +15,10 @@ def shell_sort(vector):
 def quick_sort(vector):
     if  len(vector) <= 1:
         return vector
-    else:
-        pivot = vector.pop(0)
-        mayor = []
-        menor = []
-    for  i in vector:
-        if i > pivot:
-            mayor.append(i)
-        else:
-            menor.append(i)
-        return quick_sort(menor)+ [pivot]+quick_sort(mayor)  
+    pivot, *rest = vector
+    pequeño = [x for x in rest if x < pivot]
+    grande = [x for x in rest if x >= pivot]
+    return quick_sort(pequeño) + [pivot] + quick_sort(grande)
 
 def merge_sort(vector):
     return vector
