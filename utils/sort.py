@@ -4,11 +4,11 @@ def shell_sort(vector):
     while gap > 0:
         for i in range(gap, n):
             temp = vector[i]
-            j = i - gap
-            while j >= 0 and vector[j] > temp:
+            j = i 
+            while j >= gap and vector[j-gap] > temp:
                 vector[j] = vector[j - gap]
                 j-= gap
-            vector[j + gap] = temp
+            vector[j] = temp
         gap //= 2
     return vector
 
