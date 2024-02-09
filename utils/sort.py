@@ -13,7 +13,14 @@ def shell_sort(vector):
     return vector
 
 def quick_sort(vector):
-    return vector
+    n = len(vector)
+    if n <= 1:
+        return vector
+    pivot = vector[n//2]
+    derecha = [x for x in vector if x < pivot]
+    mitad = [x for x in vector if x == pivot]
+    izquierda = [x for x in vector if x > pivot]
+    return quick_sort(izquierda) + mitad + quick_sort(derecha)
 
 def merge_sort(vector):
     return vector
