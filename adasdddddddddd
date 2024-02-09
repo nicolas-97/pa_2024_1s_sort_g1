@@ -1,0 +1,62 @@
+[33mcommit 9c841476e7bcc94e7173f89383506b8d3d471745[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mandres_gacharna[m[33m)[m
+Author: Andres G <papotemalote@yopmail.com>
+Date:   Fri Feb 9 12:02:42 2024 -0500
+
+    Todos los cambios realizados
+
+[33mcommit 07de6d863616cd9522de36b9ea5abfa704f25714[m[33m ([m[1;32mnombre-de-tu-rama[m[33m)[m
+Author: Andres G <papotemalote@yopmail.com>
+Date:   Fri Feb 9 11:54:05 2024 -0500
+
+    Todos los cambios
+
+[33mcommit bac0caae627ef03374cab76cd89e49c28fce0a04[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/diego_ospina[m[33m, [m[1;31morigin/Jose_MiguelB[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Nicolas Sabogal Torres <nicolas.sabogalto@utadeo.edu.co>
+Date:   Wed Feb 7 13:49:15 2024 -0500
+
+    Update python-app.yml
+
+[33mcommit 27f7f6181d49152a9a67616a620da782fbb8d099[m
+Author: Nicolas Sabogal Torres <nicolas.sabogalto@utadeo.edu.co>
+Date:   Wed Feb 7 13:47:11 2024 -0500
+
+    Create python-app.yml
+
+[33mcommit 157467d974e7b7dc284959b377f78e2aef693332[m
+Merge: 2d2ff6f f2c4929
+Author: Yurny25 <159065634+Yurny25@users.noreply.github.com>
+Date:   Wed Feb 7 13:29:34 2024 -0500
+
+    Merge pull request #2 from nicolas-97/Yurny-Ladino
+    
+    Cambio prueba
+
+[33mcommit f2c4929d7035fffd7a2ad2f36cbfae80f0c04a57[m
+Author: unknown <usuario1@M26-S5-60-7987.utadeo.loc>
+Date:   Wed Feb 7 13:28:23 2024 -0500
+
+    Cambio prueba
+
+[33mcommit 2d2ff6f2b7f485afecf0582429c9c4e06d2bd7b7[m
+Author: NicoDev <nicolas.sabogalto@utadeo.edu.co>
+Date:   Sun Feb 4 16:54:08 2024 -0500
+
+    fix title on md
+
+[33mcommit 0e5b9b9b0d4d4450bc9ba102e77ffa42e4bb4b6d[m
+Author: NicoDev <nicolas.sabogalto@utadeo.edu.co>
+Date:   Sun Feb 4 16:53:17 2024 -0500
+
+    add readme
+
+[33mcommit b5f1ca5987ff01fa3f43de5a67acb2f6cbadb3d9[m
+Author: NicoDev <nicolas.sabogalto@utadeo.edu.co>
+Date:   Sun Feb 4 16:29:51 2024 -0500
+
+    fix
+
+[33mcommit b6e9e17eb2025e9baceb50592aad3b47e3f3bb64[m
+Author: NicoDev <nicolas.sabogalto@utadeo.edu.co>
+Date:   Sun Feb 4 16:22:21 2024 -0500
+
+    first_tests
