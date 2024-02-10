@@ -1,4 +1,5 @@
 def shell_sort(vector):
+    
     size=len(vector)
     interval = size//2
 
@@ -6,14 +7,16 @@ def shell_sort(vector):
 
         for j in range(interval,size):
             
-            actual=vector[j]
-            index_actual = j
+            insert_value=vector[j] 
+            insert_index = j
             
-            compare_value = j-interval
-            while index_actual >= interval and vector[compare_value] > actual:
-                vector[j]=vector[compare_value]
-                index_actual -= interval
-            vector[compare_value]=actual
+
+            while insert_index >= interval and vector[insert_index-interval] > insert_value:
+                
+                vector[insert_index]=vector[insert_index-interval]
+                insert_index -= interval
+
+            vector[insert_index]=insert_value
         interval //=2
     
     return vector
