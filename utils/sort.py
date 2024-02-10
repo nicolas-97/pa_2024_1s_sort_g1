@@ -64,3 +64,4 @@ def merge_sort(vector):
             vector_final.append(mitad_der[j])
             j+=1
         return vector_final
+
