@@ -19,20 +19,20 @@ def shell_sort(vector):
 
 def quick_sort(vector):
     length=len(vector)
-    if len(vector)<1:
+    if len(vector)<=1:
         return vector
     else:
         pivot=vector.pop()
-        menores=[]
-        mayores=[]
-        for num in vector:
-            if num > pivot:
-                mayores.append(vector[num])
-            else:
-                menores.append(vector[num])
+    menores=[]
+    mayores=[]
+    for num in vector:
+        if num > pivot:
+            mayores.append(num)
+        else:
+            menores.append(num)
+    
        
-       
-        return quick_sort(menores) + [pivot] + quick_sort(mayores)
+    return quick_sort(menores) + [pivot] + quick_sort(mayores)
 
 def merge_sort(vector):
     if len(vector)<=1:
