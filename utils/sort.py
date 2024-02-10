@@ -29,7 +29,7 @@ def merge_sort(vector):
     size=len(vector)
 
     #Comprobamos si la lista contiene un solo elemento y lo retornamos
-    if size == 1:
+    if size <= 1:
         return vector
     # En caso de que el vector tenga más de 1 elemento
     
