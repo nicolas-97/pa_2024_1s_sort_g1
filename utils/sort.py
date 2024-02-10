@@ -45,22 +45,23 @@ def merge_sort(vector):
         merge_sort(mitad_izq)
         merge_sort(mitad_der)
 
-        izq=0
-        der=0
-        while len(mitad_izq)>izq and len(mitad_der)>der:
+        i=0
+        j=0
+        while len(mitad_izq)>i and len(mitad_der)>j:
             
-            if mitad_izq[izq] > mitad_der[der]:
-                vector_final.append(mitad_der[der])
-                der+=1
+            if mitad_izq[i] > mitad_der[j]:
+                vector_final.append(mitad_der[j])
+                j+=1
+
 
             else:
-                vector_final.append(mitad_izq[izq])
-                izq+=1
+                vector_final.append(mitad_izq[i])
+                i+=1
             
-        while izq<len(mitad_izq):
-            vector_final.append(mitad_izq[izq])
-            izq+=1
-        while der<len(mitad_der):
-            vector_final.append(mitad_der[der])
-            der+=1
+        while i<len(mitad_izq):
+            vector_final.append(mitad_izq[i])
+            i+=1
+        while j<len(mitad_der):
+            vector_final.append(mitad_der[j])
+            j+=1
         return vector_final
