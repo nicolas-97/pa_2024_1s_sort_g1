@@ -1,15 +1,15 @@
 def shell_sort(vector):
-    longitud = len(vector)
-    espacios = longitud// 2
-    while espacios > 0:
-        for recorrido in range(espacios, longitud):
+    pivot = len(vector)
+    less = pivot// 2
+    while less > 0:
+        for recorrido in range(less, pivot):
             buffer = vector[recorrido]
             indice = recorrido
             while indice >= espacios and vector[indice - espacios] > buffer:
                 vector[indice] = vector[indice - espacios]
                 indice -= espacios
             vector[indice] = buffer
-        espacios = espacios // 2  
+        less = less // 2  
 
     return vector
 
