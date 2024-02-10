@@ -1,12 +1,3 @@
-def opitimizar_busqueda (lista, inicio, salto):
-    for i in range (inicio + salto, len(lista, salto)):
-        valor = lista [i]
-        posicion = i
-
-        while posicion >= salto and lista [posicion - salto] >valor:
-            lista[posicion] = lista[posicion - salto]
-            posicion = posicion - salto
-        lista[posicion] = valor  
 
 def shell_sort(vector):
     mitad = len(vector) // 2
@@ -17,8 +8,23 @@ def shell_sort(vector):
         mitad = mitad // 2
     return vector 
 
+def opitimizar_busqueda (lista, inicio, salto):
+    for i in range (inicio + salto, len(lista), salto):
+        valor = lista [i]
+        posicion = i
+
+        while posicion >= salto and lista [posicion - salto] >valor:
+            lista[posicion] = lista[posicion - salto]
+            posicion = posicion - salto
+        lista[posicion] = valor  
+
 def quick_sort(vector):
     return vector
 
 def merge_sort(vector):
     return vector
+
+numeros = [7,2,11,3,1,13,5]
+print (numeros)
+shell_sort(numeros)
+print(f"Lista organizada {numeros}")
