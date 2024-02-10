@@ -45,7 +45,8 @@ def merge_sort(vector):
         merge_sort(mitad_izq)
         merge_sort(mitad_der)
 
-        izq=der=0
+        izq=0
+        der=0
         while len(mitad_izq)>izq and len(mitad_der)>der:
             
             if mitad_izq[izq] > mitad_der[der]:
