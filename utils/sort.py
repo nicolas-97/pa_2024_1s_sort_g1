@@ -42,8 +42,8 @@ def merge_sort(vector):
         mitad_izq=vector[:mitad]
         mitad_der=vector[mitad:]
         
-        merge_sort(mitad_izq)
-        merge_sort(mitad_der)
+        mitad_izq=merge_sort(mitad_izq)
+        mitad_der=merge_sort(mitad_der)
         vector_final=[]
         i=j=0
         while len(mitad_izq)>i and len(mitad_der)>j:
