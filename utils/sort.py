@@ -56,4 +56,11 @@ def merge_sort(vector):
             else:
                 vector_final.append(mitad_izq[i])
                 i+=1
+            
+        while i<len(mitad_izq):
+            vector_final.append(mitad_izq[i])
+            i+=1
+        while j<len(mitad_der):
+            vector_final.append(mitad_der[j])
+            j+=1
         return vector_final
