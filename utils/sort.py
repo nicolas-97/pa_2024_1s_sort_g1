@@ -63,4 +63,4 @@ def merge_sort(vector):
         while j<len(mitad_der):
             vector_final.append(mitad_der[j])
             j+=1
-        return vector_final
+    return vector_final
