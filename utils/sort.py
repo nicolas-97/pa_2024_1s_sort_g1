@@ -10,7 +10,7 @@ def opitimizar_busqueda (lista, inicio, salto):
 
 def shell_sort(vector):
     mitad = len(vector) // 2
-
+    
     while mitad > 0:
         for i in range(mitad):
             opitimizar_busqueda(vector, i, mitad)
