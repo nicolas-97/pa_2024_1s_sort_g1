@@ -48,20 +48,21 @@ def merge_sort(vector):
         #agrega ese dato en la lista resultado y lo elimina de su sub-lista original
         if vector_izq_ord[0] < vector_der_ord[0]: 
             resultado = resultado + [vector_izq_ord[0]]
-            vector_izq_ord = [i for i in vector_izq_ord if i != vector_izq_ord[0]]
+            vector_izq_ord = vector_izq_ord[1:]
         #caso contrario de lo anterior
         else:
             resultado = resultado + [vector_der_ord[0]]
-            vector_der_ord = [i for i in vector_der_ord if i != vector_der_ord[0]]
+            vector_der_ord = vector_der_ord[1:]
     
     #evalua si la longitud es mayor a 0 para verificar si ese elemento fue el primero en agregarse antes y asi 
     #que el siguiente elemento del sub-arreglo derecho se inserte ya que queda como restante
     while len(vector_izq_ord) > 0:
         resultado = resultado + [vector_izq_ord[0]] #agregamos el dato 
-        vector_izq_ord = [i for i in vector_izq_ord if i != vector_izq_ord[0]]
+        vector_izq_ord = vector_izq_ord[1:]
     
     while len(vector_der_ord) > 0:
         resultado = resultado + [vector_der_ord[0]]
-        vector_der_ord = [i for i in vector_der_ord if i != vector_der_ord[0]]
+        vector_der_ord = vector_der_ord[1:]
+
     
     return resultado
