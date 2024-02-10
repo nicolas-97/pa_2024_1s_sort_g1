@@ -22,7 +22,8 @@ def quick_sort(vector):
     if len(vector)<=1:
         return vector
     else:
-        pivot=vector.pop()
+        pivot=vector[0]
+        vector.remove(0)
     menores=[]
     mayores=[]
     for num in vector:
