@@ -23,17 +23,16 @@ def quick_sort(vector):
         return vector
     else:
         pivot=vector[0]
-        vector.remove(0)
-    menores=[]
-    mayores=[]
-    for num in vector:
-        if num > pivot:
-            mayores.append(num)
-        else:
-            menores.append(num)
-    
-       
-    return quick_sort(menores) + [pivot] + quick_sort(mayores)
+        menores=[]
+        mayores=[]
+        for num in vector:
+            if num > pivot:
+                mayores.append(num)
+            else:
+                menores.append(num)
+        
+        
+        return quick_sort(menores) + [pivot] + quick_sort(mayores)
 
 def merge_sort(vector):
     if len(vector)<=1:
