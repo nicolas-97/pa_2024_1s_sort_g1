@@ -16,10 +16,31 @@ def shell_sort(vector):
     return vector
 
 def quick_sort(vector):
+    if len(vector) <= 1: #caso base
+        return vector
+    
+    pivote = vector[0] 
+    menores = []
+    mayores = []
+    for i in range(1, len(vector)):
+        if vector[i]<pivote:
+            menores.append(vector[i])
+        elif vector[i]>pivote:
+            mayores.append(vector[i])
+    
+    menores = quick_sort(menores)
+    mayores = quick_sort(mayores)
+    
+    return adicional_quick(menores, pivote, mayores)
 
-
-    return vector
-
+def adicional_quick(menores, pivote, mayores):
+    resul = []
+    for i in range(len(menores)):
+        resul.append(menores[i])
+    resul.append(pivote)
+    for i in range(len(mayores)):
+        resul.append(mayores[i])
+    return resul
 
 def merge_sort(vector):
     if len(vector) <= 1: #caso base
@@ -55,8 +76,8 @@ def merge(vector_der, vector_iz):
 
     return vector_ordenado
 
-vect = [30,21,8,58,1,5]
-m = merge_sort(vect)
+vect = [6,5,8,4,7,3,9]
+m = quick_sort(vect)
 print(m)
 
 
