@@ -1,3 +1,7 @@
+'''
+Natalia Osejo Hincapie
+'''
+
 def shell_sort(vector):
     distancia = len(vector)//2 #Cantidad de subgrupos que saldran
     ubicacion = 0 #Indica el avance entre elementos de subgrupos
@@ -15,32 +19,40 @@ def shell_sort(vector):
         ubicacion = 0 #al empezar con nuevo subgrupo se reinicia ubicacion
     return vector
 
+#----------------------------------
+
+
 def quick_sort(vector):
     if len(vector) <= 1: #caso base
         return vector
     
-    pivote = vector[0] 
-    menores = []
+    pivote = vector[0] #Primer elemento seleccionado como pivote
+    menores = [] #subgrupos de mayores y menores
     mayores = []
     for i in range(1, len(vector)):
         if vector[i]<pivote:
             menores.append(vector[i])
         elif vector[i]>pivote:
             mayores.append(vector[i])
+        else:
+            menores.append(vector[i]) #Si es igual al pivote se agrega a menores
     
-    menores = quick_sort(menores)
+    menores = quick_sort(menores) #recursividad hasta llegar a caso base
     mayores = quick_sort(mayores)
     
-    return adicional_quick(menores, pivote, mayores)
+    return quick(menores, pivote, mayores) #se acomodan los resultados
 
-def adicional_quick(menores, pivote, mayores):
-    resul = []
-    for i in range(len(menores)):
-        resul.append(menores[i])
-    resul.append(pivote)
-    for i in range(len(mayores)):
-        resul.append(mayores[i])
-    return resul
+def quick(menores, pivote, mayores):
+    vector_ordenado = []
+    for i in range(len(menores)): #se agregan menores
+        vector_ordenado.append(menores[i])
+    vector_ordenado.append(pivote) #se agrega el pivote
+    for i in range(len(mayores)): #se agregan mayores
+        vector_ordenado.append(mayores[i])
+    return vector_ordenado
+
+#----------------------------------
+
 
 def merge_sort(vector):
     if len(vector) <= 1: #caso base
@@ -75,9 +87,3 @@ def merge(vector_der, vector_iz):
         vector_iz.pop(0)
 
     return vector_ordenado
-
-vect = [6,5,8,4,7,3,9]
-m = quick_sort(vect)
-print(m)
-
-
