@@ -21,8 +21,24 @@ def shell_sort(vector):
     return vector
 
 def quick_sort(vector):
+    
+    if len(vector)<=1:
+        return vector
+    
+    pivote = vector[0]
+    vector_der = []
+    vector_izq = []
 
-    return vector
+    for i in range(1,len(vector)):
+        if vector[i]<=pivote:
+            vector_izq += [vector[i]]
+        else:
+            vector_der += [vector[i]]
+    
+    vector_der_ord = quick_sort(vector_der)
+    vector_izq_ord = quick_sort(vector_izq)
+
+    return vector_izq_ord + [pivote] + vector_der_ord
 
 def merge_sort(vector):
 
