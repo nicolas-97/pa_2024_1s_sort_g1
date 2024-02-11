@@ -22,7 +22,7 @@ def quick_sort(vector):
 
 
 def merge_sort(vector):
-    if len(vector) == 1: #caso base
+    if len(vector) <= 1: #caso base
         return vector
     
     longitud = len(vector)//2
