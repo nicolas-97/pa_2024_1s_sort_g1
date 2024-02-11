@@ -1,35 +1,32 @@
 def shell_sort(vector):
-    distancia = len(vector)//2
-    tamaño = len(vector)
-    while distancia > 0 :
-        vector = insercion(vector, distancia)
-        distancia = distancia//2    
-    return print(vector)
-
-def insercion(vector, distancia):
-    for i in range(distancia, len(vector)-1): #Posicion del elemento con el cual empezamos a comparar
-                for j in range(i+1, len(vector)): #Posicion del elemento con el cual comparamos i 
-                    if vector[i] > vector[j]:
-                        vector[i], vector[j] = vector[j], vector[i]
-                        if i != 0: #Vamos a comparar si el elemento en i es menor a elementos anteriores
-                            dato = vector[i]
-                            for veces in range(distancia, len(vector[:i])):
-                                n = vector.index(dato) #n = Posicion actual del dato que antes estaba en i.
-                                if vector[n-1] > vector[n]:
-                                    vector[n-1], vector[n] = vector[n], vector[n-1]
-                                else:
-                                    continue
-                    i += 1
+    distancia = len(vector)//2 #Cantidad de subgrupos que saldran
+    ubicacion = 0 #Indica el avance entre elementos de subgrupos
+    while distancia>0: 
+        while ubicacion<distancia: #No salirse del subgrupo
+            for i in range(ubicacion+distancia, len(vector), distancia):
+                n = i #se debe comparar el valor del vector[i] con los n vectores que lo anteceden
+                while n>ubicacion:
+                    n -= distancia
+                    if vector[i]<vector[n]:
+                        vector[i], vector[n] = vector[n], vector[i]
+                        i = n
+            ubicacion += 1
+        distancia = distancia//2
+        ubicacion = 0 #al empezar con nuevo subgrupo se reinicia ubicacion
     return vector
 
 def quick_sort(vector):
+
+
     return vector
+
+
 
 def merge_sort(vector):
     return vector
 
-vect = [30,3,565,8,3,7,2]
+vect = [10,5,48,12,36,51,1]
 m = shell_sort(vect)
-
+print(m)
 
 
