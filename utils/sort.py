@@ -17,7 +17,19 @@ def shell_sort(lista):
     return lista
 
 def quick_sort(vector):
-    return vector
+    if len(vector) <= 1:
+        return vector
+    pivot = vector[0]
+    menor = [x for x in vector[1:] if x <= pivot]
+    mayor = [x for x in vector[1:] if x > pivot]
+
+    sorted_menor = quick_sort(menor)
+    sorted_mayor = quick_sort(mayor)
+
+    return sorted_menor + [pivot] + sorted_mayor
 
 def merge_sort(vector):
+
     return vector
+
+
