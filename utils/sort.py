@@ -1,8 +1,4 @@
 
-from math import pi
-from tkinter import Y
-
-
 def shell_sort(vector):
     x=len(vector)//2
     while x>0:
