@@ -1,4 +1,4 @@
-def shell(lista):
+def shell_sort(lista):
     medio=len(lista)//2
 
     while medio>=1:
