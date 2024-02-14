@@ -11,6 +11,7 @@ def shell_sort(lista):
                 lista[i]=numero
 
         medio=medio//2
+    return lista 
 
 #####
         
