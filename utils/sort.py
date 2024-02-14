@@ -1,8 +1,3 @@
-""" lista = [64, 25, 12, 22, 11]
-merge_sort(lista)
-print("merge_sort:", lista) """
-
-
 def shell_sort(vector):
     tamano = 0
     for i in vector:
@@ -20,11 +15,7 @@ def shell_sort(vector):
         final //= 2
     return vector
 
-lista = [64, 25, 12, 22, 11]
-shell_sort(lista)
-print("shell_sort:", lista)
-
-"""SEGUNDO"""
+""" SEGUNDO """
 
 def quick_sort(vector, start = 0, end = None):
     if end is None:
@@ -59,9 +50,7 @@ def quick_sort(vector, start = 0, end = None):
     quick(vector, start, end)
     return vector
 
-"""lista = [64, 25, 12, 74, 11]
-lista = quick_sort(lista)
-print("quick_sort:", lista) """
+
 
 """"TERCERO"""
 
@@ -105,6 +94,3 @@ def merge_sort(vector):
     merge(vector)
 
     return vector
-""" lista = [64, 25, 12, 22, 11]
-merge_sort(lista)
-print("merge_sort:", lista) """
