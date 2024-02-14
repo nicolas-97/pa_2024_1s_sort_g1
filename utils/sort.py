@@ -4,20 +4,20 @@ print("merge_sort:", lista) """
 
 
 def shell_sort(vector):
-    largo = 0
+    tamano = 0
     for i in vector:
-        largo += 1
-    distancia = largo // 2
+        tamano += 1
+    final = tamano // 2
     
-    while distancia > 0:
-        for i in range(distancia, largo):
+    while final > 0:
+        for i in range(final, tamano):
             val = vector[i]
             j = i
-            while j >= distancia and vector[j - distancia] > val:
-                vector[j] = vector[j - distancia]
-                j -= distancia
+            while j >= final and vector[j - final] > val:
+                vector[j] = vector[j - final]
+                j -= final
             vector[j] = val
-        distancia //= 2
+        final //= 2
     return vector
 
 lista = [64, 25, 12, 22, 11]
