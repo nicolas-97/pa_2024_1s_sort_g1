@@ -1,76 +1,110 @@
+""" lista = [64, 25, 12, 22, 11]
+merge_sort(lista)
+print("merge_sort:", lista) """
+
+
 def shell_sort(vector):
-    tamano = len(vector)
-    inicio = tamano // 2
-
-    while inicio > 0:
-        for i in range(inicio, tamano):
-            temp = vector[i]
-            posicion = i
-            while posicion >= inicio and vector[posicion - inicio] > temp:
-                vector[posicion] = vector[posicion - inicio]
-                posicion -= inicio
-            vector[posicion] = temp
-        inicio //= 2
-
+    largo = 0
+    for i in vector:
+        largo += 1
+    distancia = largo // 2
+    
+    while distancia > 0:
+        for i in range(distancia, largo):
+            val = vector[i]
+            j = i
+            while j >= distancia and vector[j - distancia] > val:
+                vector[j] = vector[j - distancia]
+                j -= distancia
+            vector[j] = val
+        distancia //= 2
     return vector
 
-""" lista = [64, 25, 12, 22, 11]
+lista = [64, 25, 12, 22, 11]
 shell_sort(lista)
-print("shell_sort:", lista) """
+print("shell_sort:", lista)
+
 """SEGUNDO"""
 
-def quick_sort(vector): 
-    if len(vector) <= 1:
-        return vector
-    else:
-        pivot = vector.pop()
-        menor = []
-        mayor = []
-        for element in vector:
-            if element <= pivot:
-                menor.append(element)
-            else:
-                mayor.append(element)
-        return quick_sort(menor) + [pivot] + quick_sort(mayor) 
+def quick_sort(vector, start = 0, end = None):
+    if end is None:
+        end = len(vector) - 1
 
-""" # Ejemplo de uso:
-lista = [64, 25, 12, 74, 11]
+    def quick(vector, start, end):
+        if start >= end:
+            return
+
+        def particion(vector, start, end):
+            pivot = vector[start]
+            menor = start + 1
+            mayor = end
+
+            while True:
+                while menor <= mayor and vector[mayor] >= pivot:
+                    mayor = mayor - 1
+                while menor <= mayor and vector[menor] <= pivot:
+                    menor = menor + 1
+                if menor <= mayor:
+                    vector[menor], vector[mayor] = vector[mayor], vector[menor]
+                else:
+                    break
+
+            vector[start], vector[mayor] = vector[mayor], vector[start]
+            return mayor
+
+        p = particion(vector, start, end)
+        quick(vector, start, p-1)
+        quick(vector, p+1, end)
+
+    quick(vector, start, end)
+    return vector
+
+"""lista = [64, 25, 12, 74, 11]
 lista = quick_sort(lista)
 print("quick_sort:", lista) """
 
 """"TERCERO"""
+
 def merge_sort(vector):
-    if len(vector) > 1:
-        mid = len(vector) // 2
-        mitad_izquierda = vector[:mid]
-        mitad_derecha = vector[mid:]
+    def merge(vector):
+    
+        def largo(vec):
+                largovec = 0
+                for _ in vec:
+                    largovec += 1 
+                return largovec
+        if largo(vector) >1: 
+            medio = largo(vector)//2 
+ 
+            izq = vector[:medio]  
+            der = vector[medio:]
+            
+            merge(izq) 
+            merge(der) 
+            
+            i = j = k = 0
+            
+            while i < largo(izq) and j < largo(der): 
+                if izq[i] < der[j]: 
+                    vector[k] = izq[i] 
+                    i+= 1
+                else: 
+                    vector[k] = der[j] 
+                    j+= 1
+                k += 1
+            
+            while i < largo(izq): 
+                vector[k] = izq[i] 
+                i+= 1
+                k+= 1
+            
+            while j < largo(der): 
+                vector[k] = der[j] 
+                j+= 1
+                k+= 1
+    merge(vector)
 
-        merge_sort(mitad_izquierda)
-        merge_sort(mitad_derecha)
-
-        i = j = k = 0
-
-        while i < len(mitad_izquierda) and j < len(mitad_derecha):
-            if mitad_izquierda[i] < mitad_derecha[j]:
-                vector[k] = mitad_izquierda[i]
-                i += 1
-            else:
-                vector[k] = mitad_derecha[j]
-                j += 1
-            k += 1
-
-        while i < len(mitad_izquierda):
-            vector[k] = mitad_izquierda[i]
-            i += 1
-            k += 1
-
-        while j < len(mitad_derecha):
-            vector[k] = mitad_derecha[j]
-            j += 1
-            k += 1
     return vector
-
-
 """ lista = [64, 25, 12, 22, 11]
 merge_sort(lista)
 print("merge_sort:", lista) """
