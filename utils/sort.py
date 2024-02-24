@@ -33,38 +33,27 @@ def quick_sort(vector):
     return quick_sort(left) + middle + quick_sort(right)
 
 def merge_sort(vector):
-    length = len(vector)
+    if len(vector) <= 1:
+        return vector
 
-    if length ==1:
-       return vector 
-    medio = length // 2 # divido el arreglo
-    vector_izq = vector[:medio]
-    vector_derecho = vector[medio:]
+    def merge(left, right):
+        result = []
+        i = j = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
+        result.extend(left[i:])
+        result.extend(right[j:])
+        return result
 
-    sort1_izquierdo = merge_sort(vector_izq)#organiza el izquierdo
-    sort2_derecho = merge_sort(vector_derecho)#organiza el derecho
-
-    return merge(sort1_izquierdo, sort2_derecho) # combinar el arreglo ya ordenado 
-
-    
-def merge(izquierdo_v, derceho_v):
-   lenght_derecho = len(derceho_v)
-   lenght_izquierdo = len(derceho_v)
-   vector_resultado = []
-   while lenght_izquierdo > 0 and lenght_derecho > 0:
-      if izquierdo_v[0]> derceho_v[0]:
-         vector_resultado.append(derceho_v[0])
-      else:
-         vector_resultado.append(izquierdo_v[0])
-         izquierdo_v.pop(0)
-
-   while lenght_izquierdo > 0:
-      vector_resultado.append(izquierdo_v[0])
-      izquierdo_v.pop(0)
-
-   while lenght_derecho > 0:
-      vector_resultado.append(derceho_v[0])
-      derceho_v.pop(0)
+    middle = len(vector) // 2
+    left = merge_sort(vector[:middle])
+    right = merge_sort(vector[middle:])
+    return merge(left, right)
 
 
 
