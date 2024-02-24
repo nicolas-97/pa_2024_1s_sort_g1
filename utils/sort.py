@@ -31,7 +31,9 @@ def quick_sort(vector):
      
      
 
-def merge_sort(vector):    
+def merge_sort(vector):   
+    if len(vector)== 0:
+        return vector  
     if len(vector) == 1:
         return vector
     else:
